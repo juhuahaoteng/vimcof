@@ -87,3 +87,43 @@ endif " has("autocmd")
 if has('syntax') && has('eval')
   packadd matchit
 endif
+=======================
+set nocompatible
+filetype on
+syntax on
+set number
+set guifont=Menlo:h14
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set hlsearch
+set backspace=2
+autocmd vimenter * NERDTree
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+inoremap < <><ESC>i
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
+inoremap ( ()<ESC>i
+"set foldmethod=indent
+
+"" map
+let mapleader=","
+inoremap jj <Esc>
+inoremap <leader>w <Esc>:w<cr>
+
+"" vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'preservim/nerdtree'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+""Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+call plug#end()
+
+
+
+
